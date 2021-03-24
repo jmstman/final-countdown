@@ -21,6 +21,11 @@ https://github.com/jmstman/final-countdown
 * App will work in Chrome, Firefox, Safari, Edge, and Internet Explorer 11
 
 ## Status
+
 Project is: In progress
+
+## Contact
+
+Created by [@jmstman](https://github.com/jmstman/final-countdown)
 
 
