@@ -1,5 +1,8 @@
-// array of strings
-let pokemonList = [
+let pokemonList = [];
+
+let pokemon = "";
+
+pokemonList = [
   {
     name: "Charmander",
     height: 0.6,
@@ -16,4 +19,12 @@ let pokemonList = [
     type: ["psychic","flying"]
   }
 ];
-console.log(pokemonList);
+
+let sizeThreshold = 5.2;
+
+for (let i = 0; i < pokemonList.length; i++){
+  if (pokemonList[i].height >= sizeThreshold){
+    document.write(`${pokemonList[i].name}  (Height: ${pokemonList[i].height}) - Wow!! This is huge! <br>`)
+  } else { document.write(`${pokemonList[i].name}  (Height: ${pokemonList[i].height}) <br>`)}
+
+}
