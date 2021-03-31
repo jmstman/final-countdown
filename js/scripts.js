@@ -22,9 +22,10 @@ pokemonList = [
 
 let sizeThreshold = 5.2;
 
-for (let i = 0; i < pokemonList.length; i++){
-  if (pokemonList[i].height >= sizeThreshold){
-    document.write(`${pokemonList[i].name}  (Height: ${pokemonList[i].height}) - Wow!! This is huge! <br>`)
-  } else { document.write(`${pokemonList[i].name}  (Height: ${pokemonList[i].height}) <br>`)}
+pokemonList.forEach(function(pokemon) {
+   console.log(pokemon.name + " " +pokemon.height + " " + pokemon.type);
+  if (pokemon.height >= sizeThreshold){
+    document.write(`${pokemon.name}  (Height: ${pokemon.height}) - Wow!! This is huge! <br>`)
+  } else { document.write(`${pokemon.name}  (Height: ${pokemon.height}) <br>`)}
 
-}
+  });
