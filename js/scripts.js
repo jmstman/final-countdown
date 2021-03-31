@@ -2,20 +2,6 @@ let pokemonList = [];
 
 let pokemon = "";
 
-function add(pokemon) {
-    pokemonList.push(pokemon);
-  }
-
-  function getAll() {
-    return pokemonList;
-  }
-
-  return {
-    add: add,
-    getAll: getAll
-  };
-})();
-
 pokemonList = [
   {
     name: "Charmander",
