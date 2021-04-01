@@ -4,7 +4,7 @@ let pokemonList = [];
 
 let pokemon = "";
 
-pokemonList = [
+let repository = [
   {
     name: "Charmander",
     height: 0.6,
@@ -22,37 +22,41 @@ pokemonList = [
   }
 ];
 
-function getAll() {
-  return pokemonList;
-}
 function add(pokemon) {
-  pokemonList.push(pokemon);
-}
-return {
-  getAll: getAll,
-  add:add
-};
+    if (
+      typeof pokemon === "object" &&
+      "name" in pokemon &&
+      "height" in pokemon &&
+      "types" in pokemon
+    ) {
+      repository.push(pokemon);
+    } else {
+      console.log("pokemon is not correct");
+    }
+  }
+  function getAll() {
+    return repository;
+  }
+  function addListItem(pokemon){
+    let pokemonList = document.querySelector(".pokemon-list");
+    let listpokemon = document.createElement("li");
+    let button = document.createElement("button");
+    button.innerText = pokemon.name;
+    button.classList.add("button-class");
+    listpokemon.appendChild(button);
+    pokemonList.appendChild(listpokemon);
+  }
+  return {
+    add: add,
+    getAll: getAll,
+    addListItem: addListItem
+  };
 })();
 
-// Creating lists
-let pokemonList = document.querySlector('.pokemon-list');
-let listItem = document.createElement('li');
-let button = document.createElement('button');
+pokemonRepository.add({ name: "Pikachu", height: 0.3, types: ["electric"] });
 
-// button text
-button.innerText = pokemon.name;
-button.classList.add('button-class');
+console.log(pokemonRepository.getAll());
 
-//append button
-listItem.appendChild(button);
-pokemonList.appendChild(listItem);
-
-let sizeThreshold = 5.2;
-
-pokemonList.forEach(function(pokemon) {
-   console.log(pokemon.name + " " +pokemon.height + " " + pokemon.type);
-  if (pokemon.height >= sizeThreshold){
-    document.write(`${pokemon.name}  (Height: ${pokemon.height}) - Wow!! This is huge! <br>`)
-  } else { document.write(`${pokemon.name}  (Height: ${pokemon.height}) <br>`)}
-
-  });
+pokemonRepository.getAll().forEach(function (pokemon) {
+  pokemonRepository.addListItem(pokemon);
+});
