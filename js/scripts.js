@@ -34,6 +34,19 @@ return {
 };
 })();
 
+// Creating lists
+let pokemonList = document.querySlector('.pokemon-list');
+let listItem = document.createElement('li');
+let button = document.createElement('button');
+
+// button text
+button.innerText = pokemon.name;
+button.classList.add('button-class');
+
+//append button
+listItem.appendChild(button);
+pokemonList.appendChild(listItem);
+
 let sizeThreshold = 5.2;
 
 pokemonList.forEach(function(pokemon) {
