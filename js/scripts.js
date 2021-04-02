@@ -37,6 +37,10 @@ function add(pokemon) {
   function getAll() {
     return repository;
   }
+  // details of pokemon in console
+  function showDetails(pokemon) {
+    console.log(pokemon);
+  }
   function addListItem(pokemon){
     let pokemonList = document.querySelector(".pokemon-list");
     let listpokemon = document.createElement("li");
@@ -45,14 +49,19 @@ function add(pokemon) {
     button.classList.add("button-class");
     listpokemon.appendChild(button);
     pokemonList.appendChild(listpokemon);
-  }
+    // event listener for button
+    button.addEventListener('click', function(){
+      showDetails(pokemon);
+  });
+}
+// function outside of IIFE
   return {
     add: add,
     getAll: getAll,
     addListItem: addListItem
   };
 })();
-
+// added pokemon to list
 pokemonRepository.add({ name: "Pikachu", height: 0.3, types: ["electric"] });
 
 console.log(pokemonRepository.getAll());
