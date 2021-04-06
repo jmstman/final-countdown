@@ -51,7 +51,7 @@ function add(pokemon) {
     pokemonList.appendChild(listpokemon);
     // event listener for button
     button.addEventListener('click', function(){
-      showDetails(pokemon);
+      showDetails(pokemon.name);
   });
 }
 // function outside of IIFE
