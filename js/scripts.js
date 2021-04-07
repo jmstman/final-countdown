@@ -1,26 +1,7 @@
 let pokemonRepository = (function() {
-
 let pokemonList = [];
+let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
-let pokemon = "";
-
-let repository = [
-  {
-    name: "Charmander",
-    height: 0.6,
-    type: ["fire"]
-  },
-  {
-    name: "Machamp",
-    height: 1.6,
-    type: ["fighting"]
-  },
-  {
-    name: "Lugia",
-    height: 5.2,
-    type: ["psychic","flying"]
-  }
-];
 
 function add(pokemon) {
     if (
@@ -29,7 +10,7 @@ function add(pokemon) {
       "height" in pokemon &&
       "types" in pokemon
     ) {
-      repository.push(pokemon);
+      pokemonList.push(pokemon);
     } else {
       console.log("pokemon is not correct");
     }
@@ -51,9 +32,26 @@ function add(pokemon) {
     pokemonList.appendChild(listpokemon);
     // event listener for button
     button.addEventListener('click', function(){
-      showDetails(pokemon.name);
+      showDetails(pokemon);
   });
 }
+
+function loadList() {
+    return fetch(apiUrl).then(function (response) {
+      return response.json();
+    }).then(function (json) {
+      json.results.forEach(function (item) {
+        let pokemon = {
+          name: item.name,
+          detailsUrl: item.url
+        };
+        add(pokemon);
+        console.log(pokemon);
+      });
+    }).catch(function (e) {
+      console.error(e);
+    })
+  }
 // function outside of IIFE
   return {
     add: add,
