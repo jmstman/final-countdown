@@ -1,9 +1,10 @@
+//IIFE
 let pokemonRepository = (function() {
-let pokemonList = [];
-let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+  let pokemonList = [];
+  //defined API url in variable
+  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
-
-function add(pokemon) {
+  function add(pokemon) {
     if (
       typeof pokemon === "object" &&
       "name" in pokemon
@@ -17,6 +18,8 @@ function add(pokemon) {
   function getAll() {
     return pokemonList;
   }
+
+  //creating list and button in DOM
   function addListItem(pokemon){
     let pokemonList = document.querySelector(".pokemon-list");
     let listpokemon = document.createElement("li");
@@ -28,10 +31,11 @@ function add(pokemon) {
     // event listener for button
     button.addEventListener('click', function(){
       showDetails(pokemon);
-  });
-}
+    });
+  }
 
-function loadList() {
+  //Get a list of pokemon from the API
+  function loadList() {
     return fetch(apiUrl).then(function (response) {
       return response.json();
     }).then(function (json) {
@@ -48,6 +52,7 @@ function loadList() {
     })
   }
 
+  //Get details of the fetched pokemon
   function loadDetails(item) {
     let url = item.detailsUrl;
     return fetch(url).then(function (response) {
@@ -62,12 +67,14 @@ function loadList() {
     });
   }
 
+  //execute the details of clicked pokemon as a promise on console
   function showDetails(item) {
-    pokemonRepository.loadDetails(item).then(function () {
+    loadDetails(item).then(function () {
       console.log(item);
     });
   }
-// function outside of IIFE
+
+  // function outside of IIFE
   return {
     add: add,
     getAll: getAll,
@@ -78,7 +85,9 @@ function loadList() {
   };
 })();
 
+//Calling the loadList function of pokemonrepository
 pokemonRepository.loadList().then(function () {
+  //Executed the getAll function
   pokemonRepository.getAll().forEach(function (pokemon) {
     pokemonRepository.addListItem(pokemon);
   });
