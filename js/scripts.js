@@ -36,6 +36,7 @@ let pokemonRepository = (function() {
 
   //Get a list of pokemon from the API
   function loadList() {
+    showLoadingMessage();
     return fetch(apiUrl).then(function (response) {
       return response.json();
     }).then(function (json) {
@@ -49,11 +50,13 @@ let pokemonRepository = (function() {
       });
     }).catch(function (e) {
       console.error(e);
+      hideLoadingMessage();
     })
   }
 
   //Get details of the fetched pokemon
   function loadDetails(item) {
+    showLoadingMessage();
     let url = item.detailsUrl;
     return fetch(url).then(function (response) {
       return response.json();
@@ -62,6 +65,7 @@ let pokemonRepository = (function() {
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
       item.types = details.types;
+      hideLoadingMessage();
     }).catch(function (e) {
       console.error(e);
     });
@@ -73,6 +77,12 @@ let pokemonRepository = (function() {
       console.log(item);
     });
   }
+  function showLoadingMessage() {
+   console.log('Loading Data...');
+ }
+ function hideLoadingMessage() {
+   console.log('Data successfully loaded!');
+ }
 
   // function outside of IIFE
   return {
