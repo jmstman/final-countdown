@@ -72,8 +72,8 @@ let pokemonRepository = (function() {
   }
 
   //execute the details of clicked pokemon as a promise on console
-  function showDetails(item) {
-    pokemonRepository.loadDetails(item).then(function () {
+  function showDetails(pokemon) {
+    pokemonRepository.loadDetails(pokemon).then(function () {
       console.log(item);
     });
   }
