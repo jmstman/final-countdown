@@ -1,45 +1,49 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>Simple JS App</title>
-  </head>
-  <body>
-    <!--Navigation for searching -->
-    <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="index.html"></a>
-        <form class="form-inline">
-          <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search" aria-label="Search">
-        </form>
-      </nav>
-    <h1>Pokedex</h1>
-     <div class="modal fade" id="pokModal" tabindex="-1" role="dialog" aria-labelledby="pokModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="pokModalLabel" ></h5>
-                <div id='modal-container'>
-      <div class='modal'>
-         <button class='modal-close'>Close</button>
-         </div>
-                <span aria-hidden="true">&times;</span>
-              </div>
-            <div class="modal-body">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Simple JS App</title>
+</head>
+<body>
+  <!--Navigation for searching -->
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="index.html"></a>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search" aria-label="Search">
+    </form>
+  </nav>
+  <h1>Pokedex</h1>
+  <div class="modal fade" id="pokModal" tabindex="-1" role="dialog" aria-labelledby="pokModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="pokModalLabel" ></h5>
+          <div id='modal-container'>
+            <div class='modal'>
+              <button class='modal-close'>Close</button>
             </div>
-            <div class="modal-footer">
-              </div>
-            </div>
+            <span aria-hidden="true">&times;</span>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
           </div>
         </div>
       </div>
-    <!--unorderd list-->
-    <ul class="pokemon-list" style="list-style-type: none;"></ul>
-    <strong>
-      <script src="js/promise-polyfill.js"></script>
-      <script src="js/fetch-polyfill.js"></script>
+    </div>
+  </div>
+  <!--unorderd list-->
+  <ul class="pokemon-list" style="list-style-type: none;"></ul>
+  <strong>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="js/promise-polyfill.js"></script>
+    <script src="js/fetch-polyfill.js"></script>
     <script src="js/scripts.js"></script>
   </strong>
-  </body>
+</body>
 </html>
