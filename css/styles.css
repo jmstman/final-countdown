@@ -33,6 +33,7 @@ body {
 img{
     display:inline-block;
     margin: 0 auto;
+    flex-basis: auto;
 }
 
 .text {
