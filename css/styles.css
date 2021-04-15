@@ -1,55 +1,54 @@
 :root {
-   --primary-color: #3c5aa6;
-   --secondary-color: rgb(61, 169, 219);
-   --accent-1: #F25430;
-   --light: #EDF2F2;
-   --dark: #737373;
+  --primary-color: #3c5aa6;
+  --secondary-color: rgb(61, 169, 219);
+  --accent-1: #f25430;
+  --light: #edf2f2;
+  --dark: #737373;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    text-align: center;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 24px;
-    background: #ffc600;
+  text-align: center;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 24px;
+  background: #ffc600;
   background: linear-gradient(to right, #d4d3dd, #ffc600);
-
 }
 
 .header {
-    text-align: center;
-    padding: 10px;
-    height: 200px;
-    width: 90%;
-    margin: auto;
-    color: var(--dark);
-    margin-top: 20px;
-    margin-bottom: 60px;
-    border-radius: 3px;
+  text-align: center;
+  padding: 10px;
+  height: 200px;
+  width: 90%;
+  margin: auto;
+  color: var(--dark);
+  margin-top: 20px;
+  margin-bottom: 60px;
+  border-radius: 3px;
 }
-img{
-    display:inline-block;
-    margin: 0 auto;
-    flex-basis: auto;
+img {
+  display: inline-block;
+  margin: 0 auto;
+  flex-basis: auto;
 }
 
 .text {
-    width: 50%;
-    margin: auto;
-    background-color: var(--secondary-color);
-    color: var(--light);
-    padding-top: 40px;
-    padding-bottom: 40px;
-    border-radius: 3px;
-    margin-bottom: 30px;
+  width: 50%;
+  margin: auto;
+  background-color: var(--secondary-color);
+  color: var(--light);
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-radius: 3px;
+  margin-bottom: 30px;
 }
 
 .pokemon-list {
-    list-style-type: none;
-    padding-left: 0;
+  list-style-type: none;
+  padding-left: 0;
 }
 
 .button {
@@ -82,14 +81,14 @@ img{
 }
 
 .modal-content {
-    background-color: var(--light);
-    border-radius: 3px;
-    color: var(--dark);
-    text-transform: capitalize;
+  background-color: var(--light);
+  border-radius: 3px;
+  color: var(--dark);
+  text-transform: capitalize;
 }
 
 .modal-body p {
-    text-align: left;
+  text-align: left;
 }
 #modal-container {
   display: none;
@@ -116,80 +115,112 @@ img{
   text-align: center;
 }
 
-
 /* type section  */
 
 .types-container {
-    display: grid;
-    grid-template-columns: 4em 4em 4em;
-    grid-template-rows: 1.5em;
-    grid-gap: 5px;
-    width: 50%;
-    margin-top: 15px;
-    margin-bottom: 15px;
+  display: grid;
+  grid-template-columns: 4em 4em 4em;
+  grid-template-rows: 1.5em;
+  grid-gap: 5px;
+  width: 50%;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .type {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--light);
-    border-radius: 3px;
-    text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--light);
+  border-radius: 3px;
+  text-transform: uppercase;
 }
 
-.type > p, h2 {
-    margin-bottom: 0;
+.type > p,
+h2 {
+  margin-bottom: 0;
 }
 
-.normal { background: #A8A77A }
-.fire {  background: #EE8130 }
-.water { background: #6390F0 }
-.electric { background: #F7D02C }
-.grass { background: #7AC74C }
-.ice{ background: #96D9D6 }
-.fighting { background: #C22E28 }
-.poison { background: #A33EA1 }
-.ground { background: #E2BF65 }
-.flying { background: #A98FF3 }
-.psychic { background: #F95587 }
-.bug { background: #A6B91A }
-.rock { background: #B6A136 }
-.ghost { background: #735797 }
-.dragon { background: #6F35FC }
-.dark { background: #705746 }
-.steel { background: #B7B7CE }
-.fairy { background: #D685AD }
+.normal {
+  background: #a8a77a;
+}
+.fire {
+  background: #ee8130;
+}
+.water {
+  background: #6390f0;
+}
+.electric {
+  background: #f7d02c;
+}
+.grass {
+  background: #7ac74c;
+}
+.ice {
+  background: #96d9d6;
+}
+.fighting {
+  background: #c22e28;
+}
+.poison {
+  background: #a33ea1;
+}
+.ground {
+  background: #e2bf65;
+}
+.flying {
+  background: #a98ff3;
+}
+.psychic {
+  background: #f95587;
+}
+.bug {
+  background: #a6b91a;
+}
+.rock {
+  background: #b6a136;
+}
+.ghost {
+  background: #735797;
+}
+.dragon {
+  background: #6f35fc;
+}
+.dark {
+  background: #705746;
+}
+.steel {
+  background: #b7b7ce;
+}
+.fairy {
+  background: #d685ad;
+}
 
 /* hexidecimals for colors found here: https://www.epidemicjohto.com/t882-type-colors-hex-colors  */
 
-
-
 /* media queries */
 
-@media only screen and (max-width: 800px){
-    .text {
-        width: 90%;
-    }
+@media only screen and (max-width: 800px) {
+  .text {
+    width: 90%;
+  }
 
-    .button {
-        width: 80%;
-    }
+  .button {
+    width: 80%;
+  }
 }
 
-@media only screen and (max-width: 500px){
-    .text {
-        width: 90%;
-    }
+@media only screen and (max-width: 500px) {
+  .text {
+    width: 90%;
+  }
 
-    .button {
-        width: 90%;
-        text-align: center;
-    }
+  .button {
+    width: 90%;
+    text-align: center;
+  }
 
-    .modal img {
-        width: 50%;
-    }
-
-
+  .modal img {
+    width: 50%;
+  }
 }
